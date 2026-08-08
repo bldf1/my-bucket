@@ -1,0 +1,32 @@
+{
+    "version": "1.5.0",
+    "description": "图吧工具箱 WinUI3 版，现代化的 PC 硬件检测与系统维护工具集",
+    "homepage": "https://tubawinui3.cn/",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/luolangaga/tubatools/releases/download/v1.5.0/TubaWinUi3_Portable_1.5.0_x64.zip",
+            "hash": "fa700d8e256678e90339d34d371a964f2d6a4f81e731ca262396ba14efaff4c1"
+        }
+    },
+    "extract_dir": "src",
+    "notes": "解压后二进制文件位于 'src' 子目录下，这是上游压缩包的结构。",
+    "shortcuts": [
+        [
+            "TubaWinUi3.exe",
+            "图吧工具箱"
+        ]
+    ],
+    "post_install": "if (!(Test-Path \"$dir\\Data\\.config_location\")) { Set-Content -Encoding ASCII -Path \"$dir\\Data\\.config_location\" -Value 'AppRoot' }",
+    "persist": "Data",
+    "checkver": {
+        "github": "https://github.com/luolangaga/tubatools"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/luolangaga/tubatools/releases/download/v$version/TubaWinUi3_Portable_$version_x64.zip"
+            }
+        }
+    }
+}

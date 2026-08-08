@@ -1,0 +1,65 @@
+{
+    "version": "3.5.2",
+    "description": "基于 arch1t3cht 分支的中文优化版字幕编辑器。针对中文用户深度适配字体渲染与快捷键，集成字体管理器、透视追踪、GIF/图片序列导出、深色模式、硬件解码加速及一键缓存清理等功能。",
+    "homepage": "https://github.com/mojie126/Aegisub",
+    "license": "BSD-3-Clause",
+    "suggest": {
+        "vcredist": "extras/vcredist2022"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/mojie126/Aegisub/releases/download/3.5.2/Aegisub-3.5.2-win64-portable.zip",
+            "hash": "90e8a4d790d983cb048d43ae3737ba6494ec203ed060e05b05a3f108cf9af773"
+        }
+    },
+    "extract_dir": "aegisub-portable",
+    "shortcuts": [
+        [
+            "Aegisub.exe",
+            "Aegisub"
+        ]
+    ],
+    "persist": [
+        "autoback",
+        "automation",
+        "autosave",
+        "catalog",
+        "config"
+    ],
+    "pre_install": [
+        "# config.json is recreated on launch instead of being overwritten, so hardlinks break persistence.",
+        "'config.json' | ForEach-Object {",
+        "    if (Test-Path -LiteralPath \"$persist_dir\\$_\" -PathType Leaf) {",
+        "        Copy-Item -Path \"$persist_dir\\$_\" -Destination \"$dir\\$_\" -Force",
+        "    }",
+        "}"
+    ],
+    "post_install": [
+        "'automation' | ForEach-Object {",
+        "    if (Test-Path -Path \"$dir\\$_.original\" -PathType Container) {",
+        "        Copy-Item -Path \"$dir\\$_.original\\*\" -Destination \"$dir\\$_\" -Force -Recurse",
+        "        Remove-Item -Path \"$dir\\$_.original\" -Recurse -Force -ErrorAction SilentlyContinue",
+        "    }",
+        "}"
+    ],
+    "pre_uninstall": [
+        "# Persist config files that are recreated rather than overwritten.",
+        "'config.json' | ForEach-Object {",
+        "    if (Test-Path -LiteralPath \"$dir\\$_\" -PathType Leaf) {",
+        "        ensure $persist_dir | Out-Null",
+        "        Copy-Item -Path \"$dir\\$_\" -Destination \"$persist_dir\\$_\" -Force",
+        "    }",
+        "}"
+    ],
+    "checkver": {
+        "github": "https://github.com/mojie126/Aegisub",
+        "regex": "Aegisub-([\\d.]+)-win64-portable\\.zip"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/mojie126/Aegisub/releases/download/$version/Aegisub-$version-win64-portable.zip"
+            }
+        }
+    }
+}
