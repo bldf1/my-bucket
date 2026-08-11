@@ -1,12 +1,12 @@
 {
-    "version": "1.5.0",
+    "version": "1.5.1",
     "description": "图吧工具箱 WinUI3 版，现代化的 PC 硬件检测与系统维护工具集",
     "homepage": "https://tubawinui3.cn/",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/luolangaga/tubatools/releases/download/v1.5.0/TubaWinUi3_Portable_1.5.0_x64.zip",
-            "hash": "fa700d8e256678e90339d34d371a964f2d6a4f81e731ca262396ba14efaff4c1"
+            "url": "https://github.com/luolangaga/tubatools/releases/download/v1.5.1/TubaWinUi3_Portable_1.5.1_x64.zip",
+            "hash": "99f1b66ee568911f189c8a2e783d64b02aaed9ec466253a0c306863132eac6c1"
         }
     },
     "extract_dir": "src",
