@@ -2,7 +2,10 @@
     "version": "3.5.2",
     "description": "基于 arch1t3cht 分支的中文优化版字幕编辑器。针对中文用户深度适配字体渲染与快捷键，集成字体管理器、透视追踪、GIF/图片序列导出、深色模式、硬件解码加速及一键缓存清理等功能。",
     "homepage": "https://github.com/mojie126/Aegisub",
-    "license": "BSD-3-Clause",
+    "license": {
+        "identifier": "BSD-3-Clause",
+        "url": "https://github.com/mojie126/Aegisub/blob/main/LICENSE"
+    },
     "suggest": {
         "vcredist": "extras/vcredist2022"
     },
@@ -47,7 +50,7 @@
         "'config.json' | ForEach-Object {",
         "    if (Test-Path -LiteralPath \"$dir\\$_\" -PathType Leaf) {",
         "        ensure $persist_dir | Out-Null",
-        "        Copy-Item -Path \"$dir\\$_\" -Destination \"$persist_dir\\$_\" -Force",
+        "        Copy-Item -Path \"$dir\\$$_\" -Destination \"$persist_dir\\$_\" -Force",
         "    }",
         "}"
     ],
@@ -58,7 +61,11 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/mojie126/Aegisub/releases/download/$version/Aegisub-$version-win64-portable.zip"
+                "url": "https://github.com/mojie126/Aegisub/releases/download/$version/Aegisub-$version-win64-portable.zip",
+                "hash": {
+                    "url": "https://github.com/mojie126/Aegisub/releases/download/$version/Aegisub-$version-win64-portable.zip.sha256",
+                    "regex": "$sha256"
+                }
             }
         }
     }
