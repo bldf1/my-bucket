@@ -22,8 +22,16 @@
             "EcoPaste"
         ]
     ],
-    "link": "$env:AppData\\com.ayangweb.EcoPaste",
-    "cleanup": "$env:LocalAppData\\com.ayangweb.EcoPaste",
+    "persist": [
+        {
+            "source": "$env:AppData\\com.ayangweb.EcoPaste",
+            "target": "appdata"
+        },
+        {
+            "source": "$env:LocalAppData\\com.ayangweb.EcoPaste",
+            "target": "localappdata"
+        }
+    ],
     "pre_install": [
         "if (!$bucket) { $bucket = 'abyss' }",
         ". $bucketsdir\\$bucket\\util\\_.ps1",
@@ -38,19 +46,14 @@
         "if (!$bucket) { $bucket = 'abyss' }",
         ". $bucketsdir\\$bucket\\util\\_.ps1",
         "A-Start-Uninstall",
-        "A-Stop-Process",
-        "A-Remove-Link"
+        "A-Stop-Process"
     ],
     "post_uninstall": [
         "if (!$bucket) { $bucket = 'abyss' }",
         ". $bucketsdir\\$bucket\\util\\_.ps1",
         "A-Complete-Uninstall"
     ],
-    "checkver": {
-        "github": {
-            "channel": "latest"
-        }
-    },
+    "checkver": "github",
     "autoupdate": {
         "architecture": {
             "64bit": {
