@@ -2,9 +2,7 @@
     "version": "1.1.0",
     "description": "一个跨平台的开源剪贴板管理工具。",
     "homepage": "https://github.com/EcoPasteHub/EcoPaste",
-    "license": {
-        "identifier": "Apache-2.0"
-    },
+    "license": "Apache-2.0",
     "architecture": {
         "64bit": {
             "url": "https://github.com/EcoPasteHub/EcoPaste/releases/download/v1.1.0/EcoPaste_1.1.0_x64-setup.exe#/dl.7z",
@@ -15,45 +13,17 @@
             "hash": "94a8efaf4fbb5b2be13f705da6da49a826d8e7efd2ff8f74fb88a12184d36f14"
         }
     },
-    "extract_to": "app",
+    "extract_dir": "app",
     "shortcuts": [
         [
-            "app\\EcoPaste.exe",
+            "EcoPaste.exe",
             "EcoPaste"
         ]
     ],
-    "persist": [
-        {
-            "source": "$env:AppData\\com.ayangweb.EcoPaste",
-            "target": "appdata"
-        },
-        {
-            "source": "$env:LocalAppData\\com.ayangweb.EcoPaste",
-            "target": "localappdata"
-        }
-    ],
-    "pre_install": [
-        "if (!$bucket) { $bucket = 'abyss' }",
-        ". $bucketsdir\\$bucket\\util\\_.ps1",
-        "A-Start-Install"
-    ],
-    "post_install": [
-        "if (!$bucket) { $bucket = 'abyss' }",
-        ". $bucketsdir\\$bucket\\util\\_.ps1",
-        "A-Complete-Install"
-    ],
-    "pre_uninstall": [
-        "if (!$bucket) { $bucket = 'abyss' }",
-        ". $bucketsdir\\$bucket\\util\\_.ps1",
-        "A-Start-Uninstall",
-        "A-Stop-Process"
-    ],
-    "post_uninstall": [
-        "if (!$bucket) { $bucket = 'abyss' }",
-        ". $bucketsdir\\$bucket\\util\\_.ps1",
-        "A-Complete-Uninstall"
-    ],
-    "checkver": "github",
+    "persist": "data",
+    "checkver": {
+        "github": "https://github.com/EcoPasteHub/EcoPaste"
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
