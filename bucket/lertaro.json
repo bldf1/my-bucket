@@ -1,5 +1,5 @@
 {
-    "version": "5.4.0",
+    "version": "5.4.4",
     "description": "现代化高颜值且高度可扩展的开源文件检索与启动工具，完美替代并拓展传统商业级桌面检索工作流。",
     "homepage": "https://lertaro.github.io",
     "license": "MIT",
@@ -15,12 +15,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Lertaro/Lertaro/releases/download/v5.4.0/Lertaro-Portable.zip",
-            "hash": "f21214e8c660ed9d2e8e4511812d5fee1a903bbc68be8a29806b226a08e0f535"
+            "url": "https://github.com/Lertaro/Lertaro/releases/download/v5.4.4/Lertaro-Portable.zip",
+            "hash": "4dde835e56bc265ca3c2182462da596388f8dc56d527a180a0f3846f945667c1"
         },
         "arm64": {
-            "url": "https://github.com/Lertaro/Lertaro/releases/download/v5.4.0/Lertaro-Portable-arm64.zip",
-            "hash": "5d2652abcf8f84a2b1b9341cec4ba05f17b06434307d3854e44e717af42a9588"
+            "url": "https://github.com/Lertaro/Lertaro/releases/download/v5.4.4/Lertaro-Portable-arm64.zip",
+            "hash": "c150f0d64d3e2dc1a7ccd4fd08fa31e463fcc02007d99990a2a0235fd8897be6"
         }
     },
     "extract_dir": "Lertaro",
