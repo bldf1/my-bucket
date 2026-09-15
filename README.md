@@ -21,3 +21,6 @@ scoop install my-bucket/<软件名>
 | realesrgan-gui | 实用、美观的 Real-ESRGAN 图形界面 |
 | SubtitleFontHelper | 自动处理字幕字体缺失问题的工具 |
 | tubatools | 图吧工具箱 WinUI3 版，现代化的 PC 硬件检测与系统维护工具集 |
+| EcoPaste | 一个跨平台的开源剪贴板管理工具 |
+| 果核看图 | 极速看图，不止于快 |
+| lertaro | 现代化高颜值且高度可扩展的开源文件检索与启动工具，完美替代并拓展传统商业级桌面检索工作流 |
