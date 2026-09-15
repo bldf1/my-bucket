@@ -17,19 +17,11 @@
     ],
     "persist": "Data",
     "notes": "框架依赖版本，未内置 .NET 运行时，需单独安装 .NET Desktop Runtime。上下文菜单管理器 Plus 可能会要求安装或修复其 Windows 服务，以执行需要提升权限的菜单操作。",
-    "pre_install": [
-        "if (Test-Path \"$scoopdir\\apps\\contextmenumgrplus-beta\\current\") {",
-        "    error 'Context Menu Manager Plus Beta is already installed. Uninstall contextmenumgrplus-beta before installing the stable package.'",
-        "    exit 1",
-        "}"
-    ],
-    "checkver": {
-        "github": "https://github.com/PLFJY/ContextMenuMgr"
-    },
+    "checkver": "github",
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/PLFJY/ContextMenuMgr/releases/download/v$version/ContextMenuMgrPlus-$version-framework-dependent-portable"
+                "url": "https://github.com/PLFJY/ContextMenuMgr/releases/download/v$version/ContextMenuMgrPlus-$version-framework-dependent-portable.zip"
             }
         }
     }
