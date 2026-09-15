@@ -15,7 +15,6 @@ scoop install my-bucket/<软件名>
 | ---- | ---- |
 | aegisub | 基于 arch1t3cht 分支的中文优化版字幕编辑器 |
 | contextmenumgrplus | 一款 Windows 上下文菜单管理工具 |
-| dandanplay | 弹弹play：全功能本地视频+弹幕播放器 |
 | EchoMusic | 一个简约的第三方酷狗音乐概念版 |
 | MapleMono-NF-CN-unhinted | 一款专注于优化编程体验的开源等宽字体 |
 | openrgb | 开源 RGB 灯光控制软件，支持众多厂商的设备 |
